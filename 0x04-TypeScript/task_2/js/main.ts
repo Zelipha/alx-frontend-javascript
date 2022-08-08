@@ -46,6 +46,10 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
+console.log(createEmployee(200));
+console.log(createEmployee(1000));
+console.log(createEmployee("$500"));
+
 // functions specific to employees
 
 function isDirector(employee: Teacher | Director): boolean {
@@ -60,6 +64,9 @@ function executeWork(employee: Teacher | Director): string {
   }
 }
 
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
+
 // String literal types
 
 type Subjects = "Math" | "History";
@@ -71,3 +78,6 @@ function teachClass(todayClass: Subjects): string {
     return `Teaching History`;
   }
 }
+
+console.log(teachClass("Math"));
+console.log(teachClass("History"));
